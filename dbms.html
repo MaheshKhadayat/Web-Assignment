@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DBMS Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      section {
+        max-width: 800px;
+        margin: auto;
+        margin-bottom: 30px;
+      }
+
+      textarea,
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+      }
+
+      button {
+        padding: 8px 16px;
+        border: none;
+        background-color: #007acc;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul li {
+        background-color: #e0f7fa;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #007acc;
+        text-decoration: none;
+      }
+
+      .delete-btn {
+        background: none;
+        border: none;
+        color: #d11a2a;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="table.html" class="back-link">⬅ Back to Timetable</a>
+    <h1>📘 DBMS - Notes & Tasks</h1>
+
+    <section>
+      <h2>📝 Notes</h2>
+      <textarea placeholder="Write your DBMS notes here..." rows="5"></textarea>
+    </section>
+
+    <section>
+      <h2>📋 Assignments</h2>
+      <textarea placeholder="Assignment details..." rows="4"></textarea>
+    </section>
+
+    <section>
+      <h2>✅ To-Do List</h2>
+      <input type="text" id="todo-input" placeholder="Add a task..." />
+      <button onclick="addTodo()">Add Task</button>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <script>
+      function addTodo() {
+        const input = document.getElementById("todo-input");
+        const list = document.getElementById("todo-list");
+
+        if (input.value.trim() !== "") {
+          const li = document.createElement("li");
+          li.innerHTML = `${input.value} <button class="delete-btn" onclick="this.parentElement.remove()">×</button>`;
+          list.appendChild(li);
+          input.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

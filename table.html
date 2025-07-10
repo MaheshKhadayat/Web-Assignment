@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BCA 3rd Sem Timetable</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      h2:hover::after {
+        content: " ✨ Plan it like a pro!";
+        font-size: 0.9em;
+        color: #007acc;
+      }
+
+      table {
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      caption {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 10px;
+        background-color: #007acc;
+        color: white;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #e0e0e0;
+      }
+
+      tr:nth-child(even) td {
+        background-color: #f9f9f9;
+      }
+
+      td a {
+        text-decoration: none;
+        color: #007acc;
+        font-weight: bold;
+      }
+
+      td a:hover {
+        color: #003f5c;
+        text-decoration: underline;
+      }
+
+      td[rowspan],
+      td[colspan] {
+        background-color: #eaf4fc;
+      }
+
+      .easter-egg {
+        display: none;
+      }
+    </style>
+  </head>
+  <body >
+    <h2 onclick="alert('🚀 Go smash that day!')">BCA 3rd Semester Timetable</h2>
+
+    <table>
+      <caption>
+        BCA 3rd Sem
+      </caption>
+      <tr>
+        <th>Day</th>
+        <th>10:10 - 11:00</th>
+        <th>11:05 - 11:55</th>
+        <th>12:00 - 12:50</th>
+        <th>12:50 - 1:50</th>
+        <th>1:50 - 2:40</th>
+        <th>2:45 - 3:35</th>
+        <th>3:40 - 4:30</th>
+      </tr>
+
+      <tr>
+        <th>Monday</th>
+        <td><a href="lang.html">Lang 🗣️</a></td>
+        <td></td>
+        <td><a href="ge.html">GE 📘</a></td>
+        <td rowspan="5"><strong>🍱 Lunch</strong></td>
+        <td colspan="2">
+          <a href="dbms.html">DBMS 💾</a><br />B1: Lab1 / B2: Lab2
+        </td>
+        <td><a href="webtech.html">Web Tech 🌐</a></td>
+      </tr>
+
+      <tr>
+        <th>Tuesday</th>
+        <td><a href="lang.html">Lang 🗣️</a></td>
+        <td></td>
+        <td><a href="ge.html">GE 📘</a></td>
+        <td><a href="dbms.html">DBMS 💾</a></td>
+        <td><a href="ai.html">AI 🤖</a></td>
+        <td><a href="coa.html">COA 🧠</a></td>
+      </tr>
+
+      <tr>
+        <th>Wednesday</th>
+        <td><a href="lang.html">Lang 🗣️</a></td>
+        <td><a href="mde.html">MDE 📝</a></td>
+        <td><a href="ge.html">GE 📘</a></td>
+        <td><a href="coa.html">COA 🧠</a></td>
+        <td><a href="dbms.html">DBMS 💾</a></td>
+        <td><a href="webtech.html">Web Tech 🌐</a></td>
+      </tr>
+
+      <tr>
+        <th>Thursday</th>
+        <td></td>
+        <td></td>
+        <td><a href="lang.html">Lang 🗣️</a></td>
+        <td><a href="coa.html">COA 🧠</a></td>
+        <td><a href="ai.html">AI 🤖</a></td>
+        <td><a href="dbms.html">DBMS 💾</a></td>
+      </tr>
+
+      <tr>
+        <th>Friday</th>
+        <td></td>
+        <td></td>
+        <td><a href="lang.html">Lang 🗣️</a></td>
+        <td colspan="2"></td>
+        <td><a href="webtech.html">Web Tech 🌐</a></td>
+      </tr>
+
+      <tr>
+        <th>Saturday</th>
+        <td><a href="library.html">Library 📚</a></td>
+        <td><a href="ai.html">AI 🤖</a></td>
+        <td><a href="lang.html">Lang 🗣️</a></td>
+        <td colspan="4"></td>
+      </tr>
+    </table>
+
+    <!-- Hidden Easter Egg for code peepers -->
+    <div class="easter-egg">
+      🥚 You found the hidden egg! You’re either smart or really bored...
+    </div>
+
+    <h2 style="text-align: right;"><a href="https://www.notion.com/">to notion</a></h1>
+  </body>
+</html>
