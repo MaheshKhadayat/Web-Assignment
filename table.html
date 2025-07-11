@@ -1,87 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>BCA 3rd Sem Timetable</title>
+    <title>Time table</title>
     <style>
+      :root {
+        --background: rgb(7, 0, 29);
+        --text: #ffffffd7;
+        --border: #ff0000;
+      }
+
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 20px;
+        background-color: var(--background);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
       }
 
-      h2 {
-        text-align: center;
-        margin-bottom: 10px;
-        cursor: pointer;
-      }
-
-      h2:hover::after {
-        content: " ✨ Plan it like a pro!";
-        font-size: 0.9em;
-        color: #007acc;
-      }
-
-      table {
-        width: 90%;
-        max-width: 1000px;
-        margin: auto;
-        border-collapse: collapse;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      caption {
-        font-size: 1.5em;
-        font-weight: bold;
-        padding: 10px;
-        background-color: #007acc;
-        color: white;
-      }
-
+      table,
       th,
       td {
-        border: 1px solid #ccc;
-        padding: 12px;
+        border: 1px solid var(--border);
         text-align: center;
-      }
-
-      th {
-        background-color: #e0e0e0;
-      }
-
-      tr:nth-child(even) td {
-        background-color: #f9f9f9;
-      }
-
-      td a {
-        text-decoration: none;
-        color: #007acc;
-        font-weight: bold;
-      }
-
-      td a:hover {
-        color: #003f5c;
-        text-decoration: underline;
-      }
-
-      td[rowspan],
-      td[colspan] {
-        background-color: #eaf4fc;
-      }
-
-      .easter-egg {
-        display: none;
       }
     </style>
   </head>
-  <body >
-    <h2 onclick="alert('🚀 Go smash that day!')">BCA 3rd Semester Timetable</h2>
-
-    <table>
-      <caption>
-        BCA 3rd Sem
+  <body>
+    <table border="1" cellspacing="0" cellpadding="5" align="center">
+      <caption
+        style="
+          font-weight: 600;
+          font-size: xx-large;
+          line-break: loose;
+          margin: 30px;
+        "
+      >
+        BCA 3rd sem
       </caption>
       <tr>
         <th>Day</th>
@@ -93,72 +45,64 @@
         <th>2:45 - 3:35</th>
         <th>3:40 - 4:30</th>
       </tr>
-
       <tr>
         <th>Monday</th>
-        <td><a href="lang.html">Lang 🗣️</a></td>
+        <td>Lang<br />(s/f/g)</td>
         <td></td>
-        <td><a href="ge.html">GE 📘</a></td>
-        <td rowspan="5"><strong>🍱 Lunch</strong></td>
-        <td colspan="2">
-          <a href="dbms.html">DBMS 💾</a><br />B1: Lab1 / B2: Lab2
+        <td>GE</td>
+        <td rowspan="6">
+          L<br /><br />u<br /><br />n<br /><br />c<br /><br />h
         </td>
-        <td><a href="webtech.html">Web Tech 🌐</a></td>
+        <td colspan="2">DBMS<br />B1:lab1<br />B2:lab2</td>
+        <td></td>
       </tr>
 
       <tr>
         <th>Tuesday</th>
-        <td><a href="lang.html">Lang 🗣️</a></td>
-        <td></td>
-        <td><a href="ge.html">GE 📘</a></td>
-        <td><a href="dbms.html">DBMS 💾</a></td>
-        <td><a href="ai.html">AI 🤖</a></td>
-        <td><a href="coa.html">COA 🧠</a></td>
+        <td>Lang<br />(s/f/g)</td>
+        <td>DBMS</td>
+        <td>GE</td>
+        <td>DBMS</td>
+        <td>AI</td>
+        <td>COA</td>
       </tr>
 
       <tr>
         <th>Wednesday</th>
-        <td><a href="lang.html">Lang 🗣️</a></td>
-        <td><a href="mde.html">MDE 📝</a></td>
-        <td><a href="ge.html">GE 📘</a></td>
-        <td><a href="coa.html">COA 🧠</a></td>
-        <td><a href="dbms.html">DBMS 💾</a></td>
-        <td><a href="webtech.html">Web Tech 🌐</a></td>
+        <td>Lang<br />(s/f/g)</td>
+        <td>MDE</td>
+        <td>GE</td>
+        <td>COA</td>
+        <td>DBMS</td>
+        <td>Web tech</td>
       </tr>
 
       <tr>
         <th>Thursday</th>
         <td></td>
+        <td>Web tech</td>
+        <td>Lang<br />(H/K/AE)</td>
+        <td>COA</td>
+        <td>AI</td>
         <td></td>
-        <td><a href="lang.html">Lang 🗣️</a></td>
-        <td><a href="coa.html">COA 🧠</a></td>
-        <td><a href="ai.html">AI 🤖</a></td>
-        <td><a href="dbms.html">DBMS 💾</a></td>
       </tr>
 
       <tr>
         <th>Friday</th>
+        <td>Web tech</td>
+        <td>MDE</td>
+        <td>Lang<br />(H/K/AE)</td>
+        <td colspan="2">Web technologies<br />b1:lab 1<br />b2:lab2</td>
         <td></td>
-        <td></td>
-        <td><a href="lang.html">Lang 🗣️</a></td>
-        <td colspan="2"></td>
-        <td><a href="webtech.html">Web Tech 🌐</a></td>
       </tr>
 
       <tr>
         <th>Saturday</th>
-        <td><a href="library.html">Library 📚</a></td>
-        <td><a href="ai.html">AI 🤖</a></td>
-        <td><a href="lang.html">Lang 🗣️</a></td>
+        <td>Lib</td>
+        <td>AI</td>
+        <td>Lang<br />(H/K/AE)</td>
         <td colspan="4"></td>
       </tr>
     </table>
-
-    <!-- Hidden Easter Egg for code peepers -->
-    <div class="easter-egg">
-      🥚 You found the hidden egg! You’re either smart or really bored...
-    </div>
-
-    <h2 style="text-align: right;"><a href="https://www.notion.com/">to notion</a></h1>
   </body>
 </html>
