@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Showcase ⚡</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #1e293b;
+        --accent: #38bdf8;
+        --text: #f1f5f9;
+        --code-bg: #0f172a;
+        --code-border: #334155;
+        --font: "Segoe UI", Tahoma, sans-serif;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        margin: 0;
+        padding: 2rem;
+      }
+
+      h1 {
+        color: var(--accent);
+        text-align: center;
+      }
+
+      .section {
+        margin-bottom: 3rem;
+      }
+
+      .property-card {
+        background: var(--card);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+        box-shadow: 0 0 10px #0ea5e9;
+      }
+
+      .property-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--accent);
+      }
+
+      code {
+        background: var(--code-bg);
+        border: 1px solid var(--code-border);
+        padding: 0.5rem;
+        display: inline-block;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+      }
+
+      .example-box {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #334155;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      .static-box {
+        position: static;
+        background: #22d3ee;
+        padding: 0.5rem 1rem;
+      }
+
+      .relative-box {
+        position: relative;
+        top: 10px;
+        left: 10px;
+        background: #f43f5e;
+        padding: 0.5rem 1rem;
+      }
+
+      .absolute-container {
+        position: relative;
+        height: 100px;
+        background: #475569;
+        margin-top: 1rem;
+      }
+
+      .absolute-box {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #a78bfa;
+        padding: 0.5rem 1rem;
+      }
+
+      .flex-example {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .flex-item {
+        background: #14b8a6;
+        padding: 1rem;
+        flex: 1;
+        text-align: center;
+      }
+
+      .grid-example {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .grid-item {
+        background: #4ade80;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .extras {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .extras .property-card {
+        min-height: 200px;
+      }
+
+      /* Additional properties to stretch the line count */
+      .box-model {
+        margin: 20px;
+        padding: 15px;
+        border: 2px solid #f59e0b;
+        border-radius: 10px;
+        box-sizing: border-box;
+      }
+
+      .typography {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1.6;
+        text-shadow: 2px 2px #000;
+      }
+
+      .backgrounds {
+        background-color: #1d4ed8;
+        background-image: linear-gradient(45deg, #0ea5e9, #6366f1);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .effects {
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6);
+        filter: brightness(1.2) contrast(1.1);
+        transition: all 0.4s ease-in-out;
+        transform: rotate(2deg);
+      }
+
+      .hover-effects:hover {
+        background-color: #facc15;
+        color: #1f2937;
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+
+      .pseudo::before {
+        content: "⚡";
+        margin-right: 5px;
+        color: #f43f5e;
+      }
+
+      .animation {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .visibility {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .overflow {
+        overflow: hidden;
+      }
+
+      .z-index {
+        z-index: 10;
+        position: relative;
+      }
+
+      .outline {
+        outline: 2px dashed #10b981;
+        outline-offset: 4px;
+      }
+
+      .clip-path {
+        clip-path: circle(50%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS CheatSheet with Examples 💡</h1>
+
+    <div class="section extras">
+      <div class="property-card box-model">
+        <code>Box Model</code>
+        <div class="example-box">Margin / Padding / Border</div>
+      </div>
+      <div class="property-card typography">
+        <code>Typography</code>
+        <div class="example-box">UPPERCASE BOLD TEXT</div>
+      </div>
+      <div class="property-card backgrounds">
+        <code>Backgrounds</code>
+        <div class="example-box">Gradient background</div>
+      </div>
+      <div class="property-card effects">
+        <code>Effects</code>
+        <div class="example-box hover-effects">Hover me</div>
+      </div>
+      <div class="property-card pseudo">
+        <code>::before / ::after</code>
+        <div class="example-box">Pseudo Element</div>
+      </div>
+      <div class="property-card animation">
+        <code>Animations</code>
+        <div class="example-box">Pulsing</div>
+      </div>
+      <div class="property-card visibility">
+        <code>Visibility</code>
+        <div class="example-box">Visible</div>
+      </div>
+      <div class="property-card overflow">
+        <code>Overflow</code>
+        <div class="example-box">Overflow Hidden</div>
+      </div>
+      <div class="property-card z-index">
+        <code>Z-Index</code>
+        <div class="example-box">Layered Box</div>
+      </div>
+      <div class="property-card outline">
+        <code>Outline</code>
+        <div class="example-box">Dashed Outline</div>
+      </div>
+      <div class="property-card clip-path">
+        <code>Clip-path</code>
+        <div class="example-box">Clipped</div>
+      </div>
+    </div>
+  </body>
+</html>

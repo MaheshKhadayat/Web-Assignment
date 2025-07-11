@@ -1,48 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My page</title>
-  </head>
-  <body style="font-family: monospace">
-    <div style="font-family: monospace; text-align: center">
-      <h1>Hello</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum officia sit
-        amet harum suscipit, dicta id ab non rerum veritatis, tenetur quas
-        accusantium voluptas omnis natus pariatur consequatur dolor tempora?
-      </p>
-    </div>
-    <ul style="font-size: 30px; color: blue">
-      <li>something</li>
-      <li>nothing</li>
-      <li>everything</li>
-    </ul>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | NexusCorp</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0f172a;
+        font-family: "Inter", sans-serif;
+        color: #f1f5f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        gap: 2rem;
+      }
 
-    <table border="1">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Role</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Zakwan</td>
-          <td>Frontend Wizard 🧙‍♂️</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jeswin</td>
-          <td>Backend Sorcerer 🔮</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="3">Team Magic 💫</td>
-        </tr>
-      </tfoot>
-    </table>
+      h1 {
+        font-size: 2.5rem;
+        background: linear-gradient(to right, #0ea5e9, #8b5cf6);
+        -webkit-text-fill-color: transparent;
+      }
+
+      .nav-container {
+        display: flex;
+        gap: 2rem;
+      }
+
+      a {
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        background: #1e293b;
+        color: #ffffff;
+        font-weight: 600;
+        box-shadow: 0 5px 20px rgba(14, 165, 233, 0.2);
+        transition: all 0.3s ease-in-out;
+      }
+
+      a:hover {
+        background: #2563eb;
+        transform: translateY(-3px);
+      }
+
+      footer {
+        position: absolute;
+        bottom: 20px;
+        font-size: 0.875rem;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📊 Welcome to Nexus Dashboard</h1>
+    <div class="nav-container">
+      <a href="table2.html">📅 View Timetable</a>
+      <a href="profile.html">👤 Your Profile</a>
+    </div>
+    <footer>© 2025 NexusCorp™. Built different.</footer>
   </body>
 </html>

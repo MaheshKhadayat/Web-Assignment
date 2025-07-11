@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Showcase Portal | GlobalStyle™</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #f9fafb;
+        color: #111827;
+      }
+
+      header {
+        background: linear-gradient(90deg, #0f172a, #1e3a8a);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-left: 6px solid #38bdf8;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .card h2 {
+        margin-top: 0;
+        font-size: 1.25rem;
+        color: #1e3a8a;
+      }
+
+      .card a {
+        text-decoration: none;
+        color: #0f172a;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 1rem;
+        background: #38bdf8;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        color: white;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        background: #e5e7eb;
+        margin-top: 4rem;
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>GlobalStyle™ CSS Cheatsheet Showcase</h1>
+      <p>
+        Explore hand-crafted, enterprise-grade CSS examples across 7 stages.
+      </p>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <div class="card">
+          <h2>Part 1: Fundamentals</h2>
+          <a href="cssexample1.html">View Example</a>
+        </div>
+        <div class="card">
+          <h2>Part 2: Box Model + Positioning</h2>
+          <a href="cssexample2.html">View Example</a>
+        </div>
+        <div class="card">
+          <h2>Part 3: Selectors, States, Logic</h2>
+          <a href="cssexample3.html">View Example</a>
+        </div>
+        <div class="card">
+          <h2>Part 4: Animations & Dark Mode</h2>
+          <a href="cssexample4.html">View Example</a>
+        </div>
+        <div class="card">
+          <h2>Part 5: Grid & Shapes</h2>
+          <a href="cssexample5.html">View Example</a>
+        </div>
+        <div class="card">
+          <h2>Part 6: Modern Features</h2>
+          <a href="cssexample6.html">View Example</a>
+        </div>
+        <div class="card">
+          <h2>Part 7: Finale — Power Moves</h2>
+          <a href="cssexample7.html">View Example</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      Made with 💙 by GlobalStyle™ DevOps. Excellence through Design.
+    </footer>
+  </body>
+</html>

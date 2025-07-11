@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Showcase ⚡</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #1e293b;
+        --accent: #38bdf8;
+        --text: #f1f5f9;
+        --code-bg: #0f172a;
+        --code-border: #334155;
+        --font: "Segoe UI", Tahoma, sans-serif;
+        --dark-bg: #0f172a;
+        --light-bg: #f9fafb;
+        --light-text: #0f172a;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        margin: 0;
+        padding: 2rem;
+      }
+
+      h1 {
+        color: var(--accent);
+        text-align: center;
+      }
+
+      .section {
+        margin-bottom: 3rem;
+      }
+
+      .property-card {
+        background: var(--card);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+        box-shadow: 0 0 10px #0ea5e9;
+      }
+
+      code {
+        background: var(--code-bg);
+        border: 1px solid var(--code-border);
+        padding: 0.5rem;
+        display: inline-block;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+      }
+
+      .example-box {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #334155;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      /* === Part 3 additions === */
+      .nth-child-demo div:nth-child(even) {
+        background: #10b981;
+      }
+      .hover-focus-demo input:hover {
+        border: 2px solid #facc15;
+      }
+      .hover-focus-demo input:focus {
+        outline: none;
+        border: 2px solid #38bdf8;
+      }
+      .checked-demo input:checked + label {
+        color: #4ade80;
+        font-weight: bold;
+      }
+      .disabled-demo input:disabled {
+        background: #1e293b;
+        color: #9ca3af;
+        cursor: not-allowed;
+      }
+      .not-selector div:not(.excluded) {
+        color: #f43f5e;
+      }
+      .lang-demo:lang(en) {
+        font-style: italic;
+      }
+      .has-parent:has(span) {
+        background: #8b5cf6;
+      }
+      .is-selector:where(.box):is(.special) {
+        border: 2px dashed #3b82f6;
+      }
+      .supports-demo {
+        background: #f59e0b;
+      }
+      @supports (grid-template-rows: masonry) {
+        .supports-demo {
+          background: #84cc16;
+        }
+      }
+      @media (max-width: 600px) {
+        .media-query-demo {
+          background: #f87171;
+        }
+      }
+      @media (min-width: 601px) {
+        .media-query-demo {
+          background: #60a5fa;
+        }
+      }
+
+      /* === Part 4 additions === */
+      .sticky-demo {
+        position: sticky;
+        top: 0;
+        background: #1e293b;
+        padding: 0.5rem;
+        z-index: 1000;
+      }
+
+      .dark-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .dark-mode {
+        background: var(--light-bg);
+        color: var(--light-text);
+      }
+
+      .animated-demo {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .keyframes-fade {
+        animation: fadeIn 3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .overflow-scroll {
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+    </style>
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="sticky-demo">
+      <div class="dark-toggle">
+        <input type="checkbox" id="toggle-dark" onchange="toggleDarkMode()" />
+        <label for="toggle-dark">Toggle Dark Mode ☀️🌙</label>
+      </div>
+    </div>
+
+    <h1>CSS CheatSheet with Examples 💡 (Part 4)</h1>
+
+    <div class="section extras">
+      <div class="property-card animated-demo">
+        <code>@keyframes (bounce)</code>
+        <div class="example-box">Bouncy text</div>
+      </div>
+
+      <div class="property-card keyframes-fade">
+        <code>@keyframes (fadeIn)</code>
+        <div class="example-box">Fading in</div>
+      </div>
+
+      <div class="property-card overflow-scroll">
+        <code>overflow-x: scroll</code>
+        <div class="example-box">
+          This is a very long scrollable line of text that demonstrates overflow
+          scrolling horizontally. ➡️➡️➡️➡️➡️➡️➡️➡️➡️
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Showcase ⚡</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #1e293b;
+        --accent: #38bdf8;
+        --text: #f1f5f9;
+        --code-bg: #0f172a;
+        --code-border: #334155;
+        --font: "Segoe UI", Tahoma, sans-serif;
+        --dark-bg: #0f172a;
+        --light-bg: #f9fafb;
+        --light-text: #0f172a;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        margin: 0;
+        padding: 2rem;
+      }
+
+      h1 {
+        color: var(--accent);
+        text-align: center;
+      }
+
+      .section {
+        margin-bottom: 3rem;
+      }
+
+      .property-card {
+        background: var(--card);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+        box-shadow: 0 0 10px #0ea5e9;
+      }
+
+      code {
+        background: var(--code-bg);
+        border: 1px solid var(--code-border);
+        padding: 0.5rem;
+        display: inline-block;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+      }
+
+      .example-box {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #334155;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      .sticky-demo {
+        position: sticky;
+        top: 0;
+        background: #1e293b;
+        padding: 0.5rem;
+        z-index: 1000;
+      }
+      .dark-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .dark-mode {
+        background: var(--light-bg);
+        color: var(--light-text);
+      }
+      .animated-demo {
+        animation: bounce 2s infinite;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .keyframes-fade {
+        animation: fadeIn 3s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .overflow-scroll {
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+
+      .grid-area-container {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "sidebar main";
+        grid-template-columns: 1fr 3fr;
+        gap: 1rem;
+      }
+      .grid-header {
+        grid-area: header;
+        background: #3b82f6;
+        padding: 1rem;
+      }
+      .grid-sidebar {
+        grid-area: sidebar;
+        background: #6366f1;
+        padding: 1rem;
+      }
+      .grid-main {
+        grid-area: main;
+        background: #8b5cf6;
+        padding: 1rem;
+      }
+
+      .counter-demo {
+        counter-reset: section;
+      }
+      .counter-demo h2::before {
+        counter-increment: section;
+        content: "Section " counter(section) ": ";
+        color: #facc15;
+      }
+
+      .shape-demo {
+        width: 200px;
+        height: 200px;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        background: #14b8a6;
+      }
+
+      .blob-shape {
+        width: 200px;
+        height: 200px;
+        background: #22d3ee;
+        border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+      }
+
+      .var-example {
+        background: var(--card);
+        color: var(--accent);
+        padding: 1rem;
+        border: 2px dashed var(--accent);
+      }
+
+      .scroll-snap-container {
+        scroll-snap-type: x mandatory;
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+      }
+
+      .snap-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        background: #4f46e5;
+        padding: 2rem;
+        border-radius: 8px;
+        color: #fff;
+      }
+
+      .backdrop-demo {
+        backdrop-filter: blur(8px) brightness(0.6);
+        background: rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        border-radius: 12px;
+      }
+
+      .container-demo {
+        container-type: inline-size;
+        container-name: card;
+        border: 2px dashed #f59e0b;
+        padding: 1rem;
+      }
+
+      @container card (min-width: 300px) {
+        .container-demo p {
+          color: #10b981;
+          font-weight: bold;
+        }
+      }
+    </style>
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="sticky-demo">
+      <div class="dark-toggle">
+        <input type="checkbox" id="toggle-dark" onchange="toggleDarkMode()" />
+        <label for="toggle-dark">Toggle Dark Mode ☀️🌙</label>
+      </div>
+    </div>
+
+    <h1>CSS CheatSheet with Examples 💡 (Part 6)</h1>
+
+    <div class="section extras">
+      <div class="property-card">
+        <code>scroll-snap-type / scroll-snap-align</code>
+        <div class="example-box scroll-snap-container">
+          <div class="snap-item">Slide 1</div>
+          <div class="snap-item">Slide 2</div>
+          <div class="snap-item">Slide 3</div>
+        </div>
+      </div>
+
+      <div class="property-card">
+        <code>backdrop-filter</code>
+        <div class="example-box">
+          <div class="backdrop-demo">Frosted Glass Effect 🧊</div>
+        </div>
+      </div>
+
+      <div class="property-card">
+        <code>@container queries</code>
+        <div class="example-box container-demo">
+          <p>Resize me or use dev tools to test container query styles!</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
