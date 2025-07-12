@@ -1,108 +1,248 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Application Form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #0f0f0f 30%, #1c1c1c 100%);
+        color: #f5f5f5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4vh 2vw;
+      }
+
+      h1 {
+        font-family: "Orbitron", sans-serif;
+        color: #00ffe0;
+        text-shadow: 0 0 10px #00ffe0;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        text-align: center;
+        animation: floaty 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes floaty {
+        from {
+          transform: translateY(0px);
+        }
+        to {
+          transform: translateY(-5px);
+        }
+      }
+
+      form {
+        background-color: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid #00ffe055;
+        border-radius: 12px;
+        padding: 30px;
+        max-width: 700px;
+        width: 100%;
+        box-shadow: 0 0 20px #00ffe02a;
+        transition: 0.3s ease;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="date"],
+      input[type="time"],
+      input[type="tel"],
+      input[type="url"],
+      input[type="file"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 12px;
+        background-color: #111;
+        border: 1px solid #333;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 0.95rem;
+        outline: none;
+        margin-bottom: 10px;
+        transition: border 0.3s ease;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border: 1px solid #00ffe0;
+        box-shadow: 0 0 5px #00ffe0;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        transform: scale(1.2);
+        margin-right: 8px;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      input[type="submit"] {
+        background-color: #00ffe0;
+        color: #000;
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        width: 100%;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #00ccb3;
+      }
+
+      ::placeholder {
+        color: #ffffff2b;
+      }
+
+      @media screen and (max-width: 768px) {
+        form {
+          padding: 20px;
+        }
+      }
+      div {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+    </style>
   </head>
-  <body
-    style="
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      line-height: 20px;
-      font-family: 'Lucida Sans', sans-serif;
-    "
-  >
-    <div>
-      <h2>Job Application Form</h2>
-      <form>
-        <label for="name">Full Name:</label><br />
-        <input type="text" id="name" required /><br /><br />
+  <body>
+    <h1>🚀 Job Application Form</h1>
 
-        <label for="dob">Date of Birth:</label><br />
-        <input type="date" id="dob" required /><br /><br />
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="John Wick" required />
 
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" required /><br /><br />
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" required />
 
-        <label for="phone">Phone Number:</label><br />
-        <input type="tel" id="phone" required /><br /><br />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="example@domain.com"
+        required
+      />
 
-        <label for="gender">Gender:</label><br />
-        <input type="radio" id="male" name="gender" value="Male" />
-        <label for="male">Male</label><br />
-        <input type="radio" id="female" name="gender" value="Female" />
-        <label for="female">Female</label><br />
-        <input type="radio" id="other" name="gender" value="Other" />
-        <label for="other">Other</label><br /><br />
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="+91-XXXXXX" required />
 
-        <label for="qualification">Highest Qualification:</label><br />
-        <select id="qualification">
-          <option>Bachelor's Degree</option>
-          <option>Master's Degree</option>
-          <option>Diploma</option>
-          <option>PhD</option>
-          <option>High School</option></select
-        ><br /><br />
+      <label>Gender</label>
+      <div>
+        <label for="male"
+          >Male <input type="radio" id="male" name="gender" value="Male"
+        /></label>
 
-        <label for="college">College/University Name:</label><br />
-        <input type="text" id="college" required /><br /><br />
+        <label for="female"
+          >Female <input type="radio" id="female" name="gender" value="Female"
+        /></label>
 
-        <label for="cgpa">CGPA / Percentage:</label><br />
-        <input type="text" id="cgpa" /><br /><br />
+        <label for="other"
+          >Other <input type="radio" id="other" name="gender" value="Other"
+        /></label>
+      </div>
 
-        <label for="course">Role Applying For:</label><br />
-        <select id="course">
-          <option>Frontend Developer</option>
-          <option>Backend Developer</option>
-          <option>Full Stack Developer</option>
-          <option>Ethical Hacker</option>
-          <option>Java Developer</option>
-          <option>Data Analyst</option></select
-        ><br /><br />
+      <label for="qualification">Highest Qualification</label>
+      <select id="qualification">
+        <option>Bachelor's Degree</option>
+        <option>Master's Degree</option>
+        <option>Diploma</option>
+        <option>PhD</option>
+        <option>High School</option>
+      </select>
 
-        <label for="skills">Technical Skills (comma separated):</label><br />
-        <input
-          type="text"
-          id="skills"
-          placeholder="e.g. HTML, CSS, JavaScript, Python"
-        /><br /><br />
+      <label for="college">College/University Name</label>
+      <input
+        type="text"
+        id="college"
+        placeholder="e.g. Hogwarts School of Code"
+        required
+      />
 
-        <label for="exp">Do you have any internship/work experience?</label
-        ><br />
-        <textarea
-          id="exp"
-          rows="4"
-          cols="40"
-          placeholder="Mention company, role, duration"
-        ></textarea
-        ><br /><br />
+      <label for="cgpa">CGPA / Percentage</label>
+      <input type="text" id="cgpa" placeholder="9.0 / 90%" />
 
-        <label for="resume">Upload Your Resume:</label><br />
-        <input type="file" id="resume" /><br /><br />
+      <label for="course">Role Applying For</label>
+      <select id="course">
+        <option>Frontend Developer</option>
+        <option>Backend Developer</option>
+        <option>Full Stack Developer</option>
+        <option>Ethical Hacker</option>
+        <option>Java Developer</option>
+        <option>Data Analyst</option>
+      </select>
 
-        <label for="linkedin">LinkedIn Profile URL:</label><br />
-        <input type="url" id="linkedin" /><br /><br />
+      <label for="skills">Technical Skills (comma separated)</label>
+      <input type="text" id="skills" placeholder="HTML, CSS, React, Node.js" />
 
-        <label for="github">GitHub Profile URL:</label><br />
-        <input type="url" id="github" /><br /><br />
+      <label for="exp">Internship/Work Experience</label>
+      <textarea
+        id="exp"
+        rows="4"
+        placeholder="Company, Role, Duration..."
+      ></textarea>
 
-        <label for="message">Why Should We Hire You?</label><br />
-        <textarea
-          id="message"
-          rows="5"
-          cols="40"
-          placeholder="Talk about your strengths, attitude, and aspirations"
-        ></textarea
-        ><br /><br />
+      <label for="resume">Upload Resume</label>
+      <input type="file" id="resume" />
 
-        <label>
-          <input type="checkbox" required />
-          I confirm that the information provided is true to the best of my
-          knowledge. </label
-        ><br /><br />
+      <label for="linkedin">LinkedIn Profile URL</label>
+      <input
+        type="url"
+        id="linkedin"
+        placeholder="https://linkedin.com/in/your-profile"
+      />
 
-        <input type="submit" value="Submit Application" />
-      </form>
-    </div>
+      <label for="github">GitHub Profile URL</label>
+      <input
+        type="url"
+        id="github"
+        placeholder="https://github.com/your-handle"
+      />
+
+      <label for="message">Why Should We Hire You?</label>
+      <textarea
+        id="message"
+        rows="5"
+        placeholder="Tell us why you're the chosen one..."
+      ></textarea>
+
+      <label>
+        <input type="checkbox" required />
+        I confirm all information is true to the best of my knowledge.
+      </label>
+
+      <input type="submit" value="🚀 Submit Application" />
+    </form>
   </body>
 </html>
