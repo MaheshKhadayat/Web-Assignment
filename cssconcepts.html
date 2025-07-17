@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate CSS Home Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f172a;
+        --light: #f8fafc;
+        --accent: #38bdf8;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --font: "Poppins", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--light);
+        line-height: 1.6;
+      }
+
+      header {
+        background: #1e293b;
+        padding: 20px 40px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--accent);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--light);
+        font-weight: 600;
+        position: relative;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background: var(--accent);
+        transition: 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+      }
+
+      .hero-text {
+        max-width: 500px;
+        margin-right: 40px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--accent);
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .hero img {
+        width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px var(--shadow);
+        margin-top: 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        background: var(--accent);
+        color: #000;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #0ea5e9;
+        color: white;
+      }
+
+      .features {
+        padding: 60px 20px;
+        background: #0f172a;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        text-align: center;
+      }
+
+      .feature-card {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px var(--shadow);
+        transition: transform 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .feature-card h3 {
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+
+      footer {
+        padding: 20px;
+        background: #0f172a;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text {
+          margin: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">CSSPro</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Build Beautiful Websites with CSS</h1>
+        <p>
+          Use flex, grid, transitions, hover, and colour magic to make your
+          designs pop. This homepage is your CSS cheat sheet in action.
+        </p>
+        <a class="btn" href="#">Get Started</a>
+      </div>
+      <img
+        src="data:image/jpeg;base64,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"
+        alt="Web Design"
+      />
+    </section>
+
+    <section class="features" id="features">
+      <div class="feature-card">
+        <h3>Responsive</h3>
+        <p>Looks great on all screen sizes using flex & grid.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Modern</h3>
+        <p>Clean layouts with gradients, shadows & fonts.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Interactive</h3>
+        <p>Hover effects & transitions for smooth UX.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Easy to Edit</h3>
+        <p>Well-commented code you can tweak anytime.</p>
+      </div>
+    </section>
+    <footer>© 2025 CSSPro — Made with 💙 by Future Devs</footer>
+  </body>
+</html>
