@@ -1,12 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Time table</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCA 3rd Sem Timetable</title>
+    <style>
+      body {
+        background-color: #0d0d1f;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      caption {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #ff0077;
+        font-weight: bold;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #333;
+        box-shadow: 0 0 20px rgba(255, 0, 119, 0.3);
+      }
+
+      th,
+      td {
+        border: 1px solid #333;
+        padding: 12px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #1a1a2e;
+        color: #f0f0f0;
+      }
+
+      td {
+        background-color: #121226;
+        font-size: 0.95rem;
+      }
+
+      td[rowspan] {
+        writing-mode: vertical;
+        text-orientation: mixed;
+        font-weight: bold;
+        color: #ff0077;
+        background-color: #1a1a2e;
+      }
+
+      td[colspan] {
+        background-color: #1f1f3d;
+      }
+    </style>
   </head>
   <body>
-    <table border="1" cellspacing="0" cellpadding="5" align="center">
+    <table>
       <caption>
-        BCA 3rd sem
+        BCA 3rd Sem
       </caption>
       <tr>
         <th>Day</th>
@@ -29,7 +83,6 @@
         <td colspan="2">DBMS<br />B1:lab1<br />B2:lab2</td>
         <td></td>
       </tr>
-
       <tr>
         <th>Tuesday</th>
         <td>Lang<br />(s/f/g)</td>
@@ -39,7 +92,6 @@
         <td>AI</td>
         <td>COA</td>
       </tr>
-
       <tr>
         <th>Wednesday</th>
         <td>Lang<br />(s/f/g)</td>
@@ -49,7 +101,6 @@
         <td>DBMS</td>
         <td>Web tech</td>
       </tr>
-
       <tr>
         <th>Thursday</th>
         <td></td>
@@ -59,22 +110,22 @@
         <td>AI</td>
         <td></td>
       </tr>
-
       <tr>
         <th>Friday</th>
         <td>Web tech</td>
         <td>MDE</td>
         <td>Lang<br />(H/K/AE)</td>
-        <td colspan="2">Web technologies<br />b1:lab 1<br />b2:lab2</td>
+        <td colspan="2">Web technologies<br />B1:lab1<br />B2:lab2</td>
         <td></td>
       </tr>
-
       <tr>
         <th>Saturday</th>
         <td>Lib</td>
         <td>AI</td>
         <td>Lang<br />(H/K/AE)</td>
-        <td colspan="4"></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
     </table>
   </body>
