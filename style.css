@@ -1,9 +1,9 @@
 .external-style {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: xx-large;
 }
 
-body{
-  background-color:bisque;
+body {
+  background-color: rgb(255, 255, 255);
 }
