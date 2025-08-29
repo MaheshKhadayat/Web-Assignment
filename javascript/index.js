@@ -109,8 +109,8 @@
 // console.log(user.indexOf("k"))
 // console.log(user.lastIndexOf("a"))
 // console.log(user.length);
-// let z = "hello world";
-// console.log(z.trim())
+// let z = " hello world ";
+// console.log(z.trim("world"));
 // console.log(z.toUpperCase())
 // console.log(z.toLowerCase())
 // console.log(z.repeat(3))
@@ -487,24 +487,82 @@
 // ];
 // console.log(days[today.getDay()]);
 
-function getWeekday() {
-  const dateValue = document.getElementById("dateInput").value;
-  if (!dateValue) {
-    document.getElementById("dayResult").textContent = "Please select a date.";
-    return;
-  }
+// function getWeekday() {
+//   const dateValue = document.getElementById("dateInput").value;
+//   if (!dateValue) {
+//     document.getElementById("dayResult").textContent = "Please select a date.";
+//     return;
+//   }
 
-  const date = new Date(dateValue);
-  const weekdays = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const dayName = weekdays[date.getDay()];
+//   const date = new Date(dateValue);
+//   const weekdays = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//   ];
+//   const dayName = weekdays[date.getDay()];
 
-  document.getElementById("dayResult").textContent = "That day is: " + dayName;
+//   document.getElementById("dayResult").textContent = "That day is: " + dayName;
+// }
+
+// const date = new Date();
+// const months = [
+//   "jan",
+//   "feb",
+//   "march",
+//   "april",
+//   "may",
+//   "june",
+//   "july",
+//   "august",
+//   "september",
+//   "october",
+//   "novemeber",
+//   "december",
+// ];
+// month = months[date.getMonth()];
+// console.log(month);
+// console.log(date.getFullYear());
+// console.log(date.getHours());
+// console.log(date.getMinutes());
+// console.log(date.getSeconds());
+
+// let text;
+// const today = new Date();
+// const someday = new Date();
+// someday.setFullYear(2100, 0, 14);
+// if (someday > today) {
+//   console.log("today is before january 14 2100");
+// } else {
+//   console.log("today is afer january 14 2100");
+// }
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(i);
+// }
+
+// const person = { name: "zakwan", age: 16, gender: "Male" };
+
+// for (let x in person) {
+//   console.log(person[x]);
+// }
+
+// let something = ["apple", "banana", "cider", "durian"];
+
+// for (let fruit of something) {
+//   console.log(fruit);
+// }
+// x = 0;
+// y = 10;
+// x = x ^ y;
+// console.log(x);
+
+arr = ["apple", 1, true, 3.0, -321];
+arr.push("Bogos binted");
+for (let a of arr) {
+  console.log(a);
 }

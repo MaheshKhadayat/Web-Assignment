@@ -110,7 +110,7 @@
   <body>
     <h1>Hotel Reservation</h1>
     <div class="form-container">
-      <form>
+      <form id="reservationForm" novalidate>
         <label for="name">Name :</label>
         <input
           type="text"
@@ -122,7 +122,7 @@
 
         <label for="phno">Phone Number:</label>
         <input
-          type="number"
+          type="text"
           name="phno"
           id="phno"
           placeholder="9876543210"
@@ -157,22 +157,16 @@
 
         <label>Type of Service:</label>
         <div class="radio-group">
-          <label for="regular">
-            <input
-              type="radio"
-              name="service"
-              id="regular"
-              value="regular"
-              required
-            />
+          <label>
+            <input type="radio" name="service" value="regular" required />
             Regular
           </label>
-          <label for="business">
-            <input type="radio" name="service" id="business" value="business" />
+          <label>
+            <input type="radio" name="service" value="business" />
             Business
           </label>
-          <label for="vip">
-            <input type="radio" name="service" id="vip" value="vip" />
+          <label>
+            <input type="radio" name="service" value="vip" />
             VIP
           </label>
         </div>
@@ -180,5 +174,62 @@
         <button type="submit">Book Now</button>
       </form>
     </div>
+
+    <script>
+      document
+        .getElementById("reservationForm")
+        .addEventListener("submit", function (e) {
+          let errors = [];
+
+          // Name validation (min 3 characters)
+          const name = document.getElementById("name").value.trim();
+          if (name.length < 3)
+            errors.push("Name must be at least 3 characters.");
+
+          // Phone validation (10 digits)
+          const phone = document.getElementById("phno").value.trim();
+          const phonePattern = /^[0-9]{10}$/;
+          if (!phonePattern.test(phone))
+            errors.push("Enter a valid 10-digit phone number.");
+
+          // Email validation
+          const email = document.getElementById("email").value.trim();
+          const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+          if (!emailPattern.test(email))
+            errors.push("Enter a valid email address.");
+
+          // Date validation (must be today or in future)
+          const dateValue = document.getElementById("date").value;
+          if (dateValue) {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const selectedDate = new Date(dateValue);
+            if (selectedDate < today)
+              errors.push("Date cannot be in the past.");
+          } else {
+            errors.push("Please select a date.");
+          }
+
+          // Time validation (cannot be empty)
+          const time = document.getElementById("time").value;
+          if (!time) errors.push("Please select a time.");
+
+          // People validation (between 1–10)
+          const people = document.getElementById("people").value;
+          if (people < 1 || people > 10)
+            errors.push("Number of people must be between 1 and 10.");
+
+          // Service type validation
+          const service = document.querySelector(
+            'input[name="service"]:checked'
+          );
+          if (!service) errors.push("Please select a service type.");
+
+          if (errors.length > 0) {
+            e.preventDefault();
+            alert(errors.join("\n"));
+          }
+        });
+    </script>
   </body>
 </html>
