@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hotel Reservation</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #f4f7f6;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .form-container {
+        background-color: #ffffff;
+        padding: 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #555;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      input[type="time"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+
+      .radio-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+      }
+
+      .radio-group label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        font-weight: normal;
+        flex-grow: 1;
+        justify-content: center;
+        padding: 5px;
+      }
+
+      input[type="radio"] {
+        margin-right: 8px;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h1>Hotel Reservation</h1>
+      <form id="reservationForm" novalidate>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="phno">Phone Number:</label>
+        <input
+          type="text"
+          name="phno"
+          id="phno"
+          placeholder="9876543210"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="example@gmail.com"
+          required
+        />
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" required />
+
+        <label for="time">Time:</label>
+        <input type="time" name="time" id="time" required />
+
+        <label for="people">No. of People:</label>
+        <input
+          type="number"
+          name="people"
+          id="people"
+          placeholder="e.g. 2"
+          required
+          max="10"
+          min="1"
+        />
+
+        <label>Type of Service:</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="service" value="regular" required />
+            Regular
+          </label>
+          <label>
+            <input type="radio" name="service" value="business" />
+            Business
+          </label>
+          <label>
+            <input type="radio" name="service" value="vip" />
+            VIP
+          </label>
+        </div>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+
+    <script>
+      // --- All your JavaScript validation functions go here ---
+      // (No changes needed for the script)
+
+      // Validation Functions
+      function validateName(name) {
+        return name.trim().length >= 3
+          ? ""
+          : "Name must be at least 3 characters.";
+      }
+
+      function validatePhone(phone) {
+        const phonePattern = /^[0-9]{10}$/;
+        return phonePattern.test(phone.trim())
+          ? ""
+          : "Enter a valid 10-digit phone number.";
+      }
+
+      function validateEmail(email) {
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+        return emailPattern.test(email.trim())
+          ? ""
+          : "Enter a valid email address.";
+      }
+
+      function validateDate(dateValue) {
+        if (!dateValue) return "Please select a date.";
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const selectedDate = new Date(dateValue);
+        return selectedDate >= today ? "" : "Date cannot be in the past.";
+      }
+
+      function validateTime(time) {
+        return time ? "" : "Please select a time.";
+      }
+
+      function validatePeople(people) {
+        return people >= 1 && people <= 10
+          ? ""
+          : "Number of people must be between 1 and 10.";
+      }
+
+      function validateService(service) {
+        return service ? "" : "Please select a service type.";
+      }
+
+      document
+        .getElementById("reservationForm")
+        .addEventListener("submit", function (e) {
+          let errors = [];
+
+          const name = document.getElementById("name").value;
+          const phone = document.getElementById("phno").value;
+          const email = document.getElementById("email").value;
+          const dateValue = document.getElementById("date").value;
+          const time = document.getElementById("time").value;
+          const people = document.getElementById("people").value;
+          const service = document.querySelector(
+            'input[name="service"]:checked'
+          );
+
+          errors.push(validateName(name));
+          errors.push(validatePhone(phone));
+          errors.push(validateEmail(email));
+          errors.push(validateDate(dateValue));
+          errors.push(validateTime(time));
+          errors.push(validatePeople(people));
+          errors.push(validateService(service));
+
+          errors = errors.filter((msg) => msg !== "");
+
+          if (errors.length > 0) {
+            e.preventDefault();
+            alert(errors.join("\n"));
+          } else {
+            // Optional: Show a success message if the form is valid
+            e.preventDefault(); // Prevent actual submission for this example
+            alert("Reservation submitted successfully!");
+          }
+        });
+    </script>
+  </body>
+</html>

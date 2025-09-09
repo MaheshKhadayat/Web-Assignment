@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temp Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        padding: 40px;
+        text-align: center;
+        color: #333;
+      }
+
+      h1 {
+        color: #4caf50;
+        margin-bottom: 20px;
+      }
+
+      input,
+      select,
+      button {
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .box {
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 500px;
+      }
+
+      #result,
+      #tempResult {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>🌡️ Temperature Converter</h1>
+      <input type="number" id="tempInput" placeholder="Enter temperature" />
+      <select id="conversionType">
+        <option value="CtoF">Celsius to Fahrenheit</option>
+        <option value="FtoC">Fahrenheit to Celsius</option>
+      </select>
+      <button onclick="convertTemp()">Convert</button>
+      <p id="tempResult"></p>
+    </div>
+    <script>
+      function convertTemp() {
+        const temp = parseFloat(document.getElementById("tempInput").value);
+        const type = document.getElementById("conversionType").value;
+        let result = "";
+
+        if (type === "CtoF") {
+          result = `${temp}°C = ${((temp * 9) / 5 + 32).toFixed(2)}°F`;
+        } else {
+          result = `${temp}°F = ${(((temp - 32) * 5) / 9).toFixed(2)}°C`;
+        }
+
+        document.getElementById("tempResult").textContent = result;
+      }
+    </script>
+  </body>
+</html>

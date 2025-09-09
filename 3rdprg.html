@@ -210,11 +210,9 @@
             errors.push("Please select a date.");
           }
 
-          // Time validation (cannot be empty)
           const time = document.getElementById("time").value;
           if (!time) errors.push("Please select a time.");
 
-          // People validation (between 1–10)
           const people = document.getElementById("people").value;
           if (people < 1 || people > 10)
             errors.push("Number of people must be between 1 and 10.");

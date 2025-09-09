@@ -19,9 +19,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
         gap: 40px;
-        overflow: hidden;
+        padding: 120px 0px;
       }
 
       h1 {
@@ -30,14 +29,11 @@
         text-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9;
         animation: glow 2s ease-in-out infinite alternate;
       }
-
-      @keyframes glow {
-        from {
-          text-shadow: 0 0 10px #0ea5e9;
-        }
-        to {
-          text-shadow: 0 0 20px #38bdf8, 0 0 30px #38bdf8;
-        }
+      h2 {
+        font-size: 1.5rem;
+        color: #f9fafb;
+        text-shadow: 0 0 10px #6e6e6e, 0 0 20px #7da5cd;
+        animation: blink 1s ease-in-out infinite alternate-reverse;
       }
 
       .nav {
@@ -51,6 +47,7 @@
         border-radius: 20px;
         backdrop-filter: blur(10px);
         box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+        margin: 0px 100px;
       }
 
       .nav a {
@@ -70,16 +67,78 @@
         transform: scale(1.08) translateY(-2px);
         box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
       }
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9;
+        }
+        to {
+          text-shadow: 0 0 20px #38bdf8, 0 0 30px #38bdf8;
+        }
+      }
+
+      @keyframes blink {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0.5;
+        }
+      }
+      /* Add this at the end of your CSS */
+      @media (max-width: 768px) {
+        body {
+          padding: 60px 0px; /* Reduce padding on smaller screens */
+        }
+        .nav {
+          margin: 0px 20px; /* Reduce side margins */
+        }
+        h1 {
+          font-size: 2.5rem; /* Slightly smaller title */
+        }
+      }
     </style>
   </head>
   <body>
     <h1>🌐 Welcome to the Homepage</h1>
+    <h2>Lab programs🥱</h2>
     <div class="nav">
-      <a href="table.html" target="_blank">📅 Timetable</a>
-      <a href="profile.html" target="_blank">👤 Profile</a>
-      <a href="reservation.html" target="_blank">🍕 Reservation</a>
-      <a href="form.html" target="_blank">📝 Job Form</a>
-      <a href="cssconcepts.html" target="_blank">🕸 CSS Concepts</a>
+      <a href="1stprg.html" target="_blank">👤 Profile</a>
+      <a href="2ndprg.html" target="_blank">📅 Timetable</a>
+      <a href="3rdprg.html" target="_blank">🍕 Reservation</a>
+      <a href="4thprg.html" target="_blank">📝 Job Form</a>
+      <a href="5thprg.html" target="_blank">🕸 CSS Concepts</a>
+      <a href="6thprg.html" target="_blank">😪 Css types</a>
+      <a href="8thprg.html" target="_blank">🐼 Leap year</a>
+      <a href="9thprg.html" target="_blank">🌡 Temp conveters</a>
+      <a href="10thprg.html" target="_blank">😷 Validation Programs</a>
+      <a href="https://discount-app-lac.vercel.app/" target="_blank"
+        >👀 Discount Calculator</a
+      >
+    </div>
+
+    <h2>Validation Programs 🤕</h2>
+    <div class="nav">
+      <a href="ReservationFom.html" target="_blank">Reservation Form</a>
+      <a href="JobApp.html" target="_blank">Job form</a>
+    </div>
+
+    <h2>Practice Programs 😴</h2>
+    <div class="nav">
+      <a href="./Practice programs/1st.html" target="_blank">1</a>
+      <a href="./Practice programs/2nd.html" target="_blank">2</a>
+      <a href="./Practice programs/3rd.html" target="_blank">3</a>
+      <a href="./Practice programs/4th.html" target="_blank">4</a>
+      <a href="./Practice programs/5th.html" target="_blank">5</a>
+      <a href="./Practice programs/6th.html" target="_blank">6</a>
+      <a href="./Practice programs/7th.html" target="_blank">7</a>
+      <a href="./Practice programs/8th.html" target="_blank">8</a>
+      <a href="./Practice programs/9th.html" target="_blank">9</a>
+      <a href="./Practice programs/10th.html" target="_blank">10</a>
+      <a href="./Practice programs/11th.html" target="_blank">11</a>
+      <a href="./Practice programs/12th.html" target="_blank">12</a>
+      <a href="./Practice programs/13th.html" target="_blank">13</a>
+      <a href="./Practice programs/14th.html" target="_blank">14</a>
+      <a href="./Practice programs/15th.html" target="_blank">15</a>
     </div>
   </body>
 </html>

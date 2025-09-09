@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Job Application Form</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #f4f7f6;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      form {
+        background-color: #ffffff;
+        padding: 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #555;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select,
+      input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+
+      label[for="confirm"] {
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        margin-top: 1rem;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="jobForm" novalidate>
+      <h1>🚀 Job Application Form</h1>
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="John Wick" required />
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="example@domain.com"
+        required
+      />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="9876543210" required />
+
+      <label for="role">Role Applying For</label>
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option>Frontend Developer</option>
+        <option>Backend Developer</option>
+        <option>Full Stack Developer</option>
+        <option>Data Analyst</option>
+      </select>
+
+      <label for="resume">Upload Resume</label>
+      <input type="file" id="resume" accept=".pdf,.doc,.docx" required />
+
+      <label for="confirm">
+        <input type="checkbox" id="confirm" required />
+        I confirm all information is true to the best of my knowledge.
+      </label>
+
+      <input type="submit" value="🚀 Submit Application" />
+    </form>
+
+    <script>
+      function validateName(name) {
+        return name.trim().length >= 3
+          ? ""
+          : "Name must be at least 3 characters.";
+      }
+
+      function validateEmail(email) {
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+        return emailPattern.test(email.trim())
+          ? ""
+          : "Enter a valid email address.";
+      }
+
+      function validatePhone(phone) {
+        const phonePattern = /^[0-9]{10}$/;
+        return phonePattern.test(phone.trim())
+          ? ""
+          : "Enter a valid 10-digit phone number.";
+      }
+
+      function validateRole(role) {
+        return role ? "" : "Please select a role.";
+      }
+
+      function validateResume(file) {
+        return file ? "" : "Please upload your resume.";
+      }
+
+      function validateConfirm(checked) {
+        return checked ? "" : "You must confirm the information.";
+      }
+
+      document
+        .getElementById("jobForm")
+        .addEventListener("submit", function (e) {
+          let errors = [];
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const role = document.getElementById("role").value;
+          const resume = document.getElementById("resume").value;
+          const confirm = document.getElementById("confirm").checked;
+
+          errors.push(validateName(name));
+          errors.push(validateEmail(email));
+          errors.push(validatePhone(phone));
+          errors.push(validateRole(role));
+          errors.push(validateResume(resume));
+          errors.push(validateConfirm(confirm));
+
+          errors = errors.filter((msg) => msg !== "");
+
+          if (errors.length > 0) {
+            e.preventDefault();
+            alert(errors.join("\n"));
+          } else {
+            e.preventDefault();
+            alert("Application submitted successfully!");
+          }
+        });
+    </script>
+  </body>
+</html>
