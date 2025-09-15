@@ -1,132 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BCA 3rd Sem Timetable</title>
-    <style>
-      body {
-        background-color: #0d0d1f;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: #fff;
-        margin: 0;
-        padding: 2rem;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA 3rd Sem Timetable</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      caption {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #ff0077;
-        font-weight: bold;
-      }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #1e3c72, #0f2027, #203a43);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+    }
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid #333;
-        box-shadow: 0 0 20px rgba(255, 0, 119, 0.3);
-      }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    }
 
-      th,
-      td {
-        border: 1px solid #333;
-        padding: 12px;
-        text-align: center;
-      }
+    .title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #64b3f4;
+      margin-bottom: 30px;
+    }
 
-      th {
-        background-color: #1a1a2e;
-        color: #f0f0f0;
-      }
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 15px;
+    }
 
-      td {
-        background-color: #121226;
-        font-size: 0.95rem;
-      }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      overflow: hidden;
+    }
 
-      td[rowspan] {
-        writing-mode: vertical;
-        text-orientation: mixed;
-        font-weight: bold;
-        color: #ff0077;
-        background-color: #1a1a2e;
-      }
+    th, td {
+      padding: 12px 8px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
 
-      td[colspan] {
-        background-color: #1f1f3d;
+    th {
+      background: rgba(100, 179, 244, 0.2);
+      color: #e8f4fd;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    td {
+      background: rgba(255, 255, 255, 0.03);
+      color: #d4e6f5;
+    }
+
+    .day-header {
+      background: rgba(100, 179, 244, 0.15);
+      color: #64b3f4;
+      font-weight: 500;
+    }
+
+    .lunch-cell {
+      background: rgba(100, 179, 244, 0.1);
+      color: #64b3f4;
+      font-weight: 500;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      letter-spacing: 8px;
+      font-size: 0.85rem;
+    }
+
+    .lab-cell {
+      background: rgba(100, 179, 244, 0.08);
+      color: #9ec5e8;
+      font-size: 0.85rem;
+      line-height: 1.3;
+    }
+
+    .empty-cell {
+      background: rgba(255, 255, 255, 0.02);
+      opacity: 0.6;
+    }
+
+    .subject {
+      font-weight: 500;
+    }
+
+    .lang-note {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px 20px;
       }
-    </style>
-  </head>
-  <body>
-    <table>
-      <caption>
-        BCA 3rd Sem
-      </caption>
-      <tr>
-        <th>Day</th>
-        <th>10:10 - 11:00</th>
-        <th>11:05 - 11:55</th>
-        <th>12:00 - 12:50</th>
-        <th>12:50 - 1:50</th>
-        <th>1:50 - 2:40</th>
-        <th>2:45 - 3:35</th>
-        <th>3:40 - 4:30</th>
-      </tr>
-      <tr>
-        <th>Monday</th>
-        <td>Lang<br />(s/f/g)</td>
-        <td></td>
-        <td>GE</td>
-        <td rowspan="6">
-          L<br /><br />u<br /><br />n<br /><br />c<br /><br />h
-        </td>
-        <td colspan="2">DBMS<br />B1:lab1<br />B2:lab2</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Tuesday</th>
-        <td>Lang<br />(s/f/g)</td>
-        <td>DBMS</td>
-        <td>GE</td>
-        <td>DBMS</td>
-        <td>AI</td>
-        <td>COA</td>
-      </tr>
-      <tr>
-        <th>Wednesday</th>
-        <td>Lang<br />(s/f/g)</td>
-        <td>MDE</td>
-        <td>GE</td>
-        <td>COA</td>
-        <td>DBMS</td>
-        <td>Web tech</td>
-      </tr>
-      <tr>
-        <th>Thursday</th>
-        <td></td>
-        <td>Web tech</td>
-        <td>Lang<br />(H/K/AE)</td>
-        <td>COA</td>
-        <td>AI</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Friday</th>
-        <td>Web tech</td>
-        <td>MDE</td>
-        <td>Lang<br />(H/K/AE)</td>
-        <td colspan="2">Web technologies<br />B1:lab1<br />B2:lab2</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Saturday</th>
-        <td>Lib</td>
-        <td>AI</td>
-        <td>Lang<br />(H/K/AE)</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-  </body>
+      
+      .title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+      }
+      
+      th, td {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+      }
+      
+      .lunch-cell {
+        letter-spacing: 4px;
+        font-size: 0.75rem;
+      }
+      
+      .lab-cell {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      th, td {
+        padding: 6px 4px;
+        font-size: 0.75rem;
+      }
+      
+      .title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">BCA 3rd Semester Timetable</h1>
+    
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>Day</th>
+          <th>10:10-11:00</th>
+          <th>11:05-11:55</th>
+          <th>12:00-12:50</th>
+          <th>12:50-1:50</th>
+          <th>1:50-2:40</th>
+          <th>2:45-3:35</th>
+          <th>3:40-4:30</th>
+        </tr>
+        <tr>
+          <td class="day-header">Monday</td>
+          <td><span class="subject">Lang</span><br><span class="lang-note">(S/F/G)</span></td>
+          <td class="empty-cell">—</td>
+          <td class="subject">GE</td>
+          <td rowspan="6" class="lunch-cell">LUNCH</td>
+          <td colspan="2" class="lab-cell">
+            <strong>DBMS Lab</strong><br>
+            B1: Lab1 | B2: Lab2
+          </td>
+          <td class="empty-cell">—</td>
+        </tr>
+        <tr>
+          <td class="day-header">Tuesday</td>
+          <td><span class="subject">Lang</span><br><span class="lang-note">(S/F/G)</span></td>
+          <td class="subject">DBMS</td>
+          <td class="subject">GE</td>
+          <td class="subject">DBMS</td>
+          <td class="subject">AI</td>
+          <td class="subject">COA</td>
+        </tr>
+        <tr>
+          <td class="day-header">Wednesday</td>
+          <td><span class="subject">Lang</span><br><span class="lang-note">(S/F/G)</span></td>
+          <td class="subject">MDE</td>
+          <td class="subject">GE</td>
+          <td class="subject">COA</td>
+          <td class="subject">DBMS</td>
+          <td class="subject">Web Tech</td>
+        </tr>
+        <tr>
+          <td class="day-header">Thursday</td>
+          <td class="empty-cell">—</td>
+          <td class="subject">Web Tech</td>
+          <td><span class="subject">Lang</span><br><span class="lang-note">(H/K/AE)</span></td>
+          <td class="subject">COA</td>
+          <td class="subject">AI</td>
+          <td class="empty-cell">—</td>
+        </tr>
+        <tr>
+          <td class="day-header">Friday</td>
+          <td class="subject">Web Tech</td>
+          <td class="subject">MDE</td>
+          <td><span class="subject">Lang</span><br><span class="lang-note">(H/K/AE)</span></td>
+          <td colspan="2" class="lab-cell">
+            <strong>Web Tech Lab</strong><br>
+            B1: Lab1 | B2: Lab2
+          </td>
+          <td class="empty-cell">—</td>
+        </tr>
+        <tr>
+          <td class="day-header">Saturday</td>
+          <td class="subject">Library</td>
+          <td class="subject">AI</td>
+          <td><span class="subject">Lang</span><br><span class="lang-note">(H/K/AE)</span></td>
+          <td class="empty-cell">—</td>
+          <td class="empty-cell">—</td>
+          <td class="empty-cell">—</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
 </html>

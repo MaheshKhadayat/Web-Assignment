@@ -1,124 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Assignments Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css">
 
-      body {
-        background: radial-gradient(circle at top, #0f172a, #020617);
-        color: #f9fafb;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        padding: 120px 0px;
-      }
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">College Assignments</h1>
+      <p class="subtitle">Complete lab programs & validation projects</p>
+    </header>
 
-      h1 {
-        font-size: 3rem;
-        color: #38bdf8;
-        text-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9;
-        animation: glow 2s ease-in-out infinite alternate;
-      }
-      h2 {
-        font-size: 1.5rem;
-        color: #f9fafb;
-        text-shadow: 0 0 10px #6e6e6e, 0 0 20px #7da5cd;
-        animation: blink 1s ease-in-out infinite alternate-reverse;
-      }
-
-      .nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 25px 30px;
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
-        margin: 0px 100px;
-      }
-
-      .nav a {
-        text-decoration: none;
-        background: linear-gradient(145deg, #1e40af, #2563eb);
-        color: white;
-        padding: 15px 25px;
-        border-radius: 12px;
-        font-weight: bold;
-        font-size: 1rem;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-      }
-
-      .nav a:hover {
-        background: linear-gradient(145deg, #2563eb, #1e40af);
-        transform: scale(1.08) translateY(-2px);
-        box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
-      }
-      @keyframes glow {
-        from {
-          text-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9;
-        }
-        to {
-          text-shadow: 0 0 20px #38bdf8, 0 0 30px #38bdf8;
-        }
-      }
-
-      @keyframes blink {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0.5;
-        }
-      }
-      /* Add this at the end of your CSS */
-      @media (max-width: 768px) {
-        body {
-          padding: 60px 0px; /* Reduce padding on smaller screens */
-        }
-        .nav {
-          margin: 0px 20px; /* Reduce side margins */
-        }
-        h1 {
-          font-size: 2.5rem; /* Slightly smaller title */
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <h1>🌐 Welcome to the Homepage</h1>
-    <h2>Lab programs🥱</h2>
-    <div class="nav">
-      <a href="1stprg.html" target="_blank">👤 Profile</a>
-      <a href="2ndprg.html" target="_blank">📅 Timetable</a>
-      <a href="3rdprg.html" target="_blank">🍕 Reservation</a>
-      <a href="4thprg.html" target="_blank">📝 Job Form</a>
-      <a href="5thprg.html" target="_blank">🕸 CSS Concepts</a>
-      <a href="6thprg.html" target="_blank">😪 Css types</a>
-      <a href="8thprg.html" target="_blank">🐼 Leap year</a>
-      <a href="9thprg.html" target="_blank">🌡 Temp conveters</a>
-      <a href="10thprg.html" target="_blank">😷 Validation Programs</a>
+    <div class="assignments-container">
+      <div class="assignments-grid">
+        <a href="1stprg.html"  class="card">
+          <span class="card-icon">👤</span>
+          <h3 class="card-title">Profile Page</h3>
+          <p class="card-desc">Personal information display</p>
+        </a>
+        <a href="2ndprg.html"  class="card">
+          <span class="card-icon">📅</span>
+          <h3 class="card-title">Time-Table</h3>
+          <p class="card-desc">Class schedule layout</p>
+        </a>
+        <a href="3rdprg.html"  class="card">
+          <span class="card-icon">🍕</span>
+          <h3 class="card-title">Reservation</h3>
+          <p class="card-desc">Booking system form</p>
+        </a>
+        <a href="4thprg.html"  class="card">
+          <span class="card-icon">📝</span>
+          <h3 class="card-title">Application Form</h3>
+          <p class="card-desc">Student application design</p>
+        </a>
+        <a href="Homepage.html"  class="card">
+          <span class="card-icon">🏠</span>
+          <h3 class="card-title">Home Page</h3>
+          <p class="card-desc">Main landing page</p>
+        </a>
+        <a href="5thprg.html"  class="card">
+          <span class="card-icon">📝</span>
+          <h3 class="card-title">Text Formatting</h3>
+          <p class="card-desc">HTML text tags styling</p>
+        </a>
+        <a href="6thprg.html"  class="card">
+          <span class="card-icon">🎨</span>
+          <h3 class="card-title">CSS Types</h3>
+          <p class="card-desc">Internal CSS methods</p>
+        </a>
+        <a href="8thprg.html"  class="card">
+          <span class="card-icon">🗓️</span>
+          <h3 class="card-title">Leap Year</h3>
+          <p class="card-desc">Date calculator tool</p>
+        </a>
+        <a href="9thprg.html"  class="card">
+          <span class="card-icon">🌡️</span>
+          <h3 class="card-title">Temperature Converter</h3>
+          <p class="card-desc">Unit conversion tool</p>
+        </a>
+        <a href="10thprg.html"  class="card">
+          <span class="card-icon">✅</span>
+          <h3 class="card-title">Form Validation</h3>
+          <p class="card-desc">Input checking system</p>
+        </a>
+      </div>
     </div>
-
-    <h2>Validation Programs 🤕</h2>
-    <div class="nav">
-      <a href="ReservationFom.html" target="_blank">Reservation Form</a>
-      <a href="JobApp.html" target="_blank">Job form</a>
-    </div>
-
-   
-  </body>
+  </div>
+</body>
 </html>

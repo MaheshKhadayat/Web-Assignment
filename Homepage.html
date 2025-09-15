@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Home Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1e3c72,
+          #2a5298,
+          #1e3c72,
+          #0f2027,
+          #203a43
+        );
+        color: white;
+        min-height: 100vh;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #64b3f4;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        color: #64b3f4;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #64b3f4;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #f8f9fa;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #64b3f4, #2a5298);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+        color: #64b3f4;
+        margin-bottom:5px;
+      }
+
+      .section p {
+        font-size: 1.1rem;
+        color: #f8f9fa;
+        max-width: 500px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      footer {
+        padding: 30px 20px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.2);
+        color: #b8d4f0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">🏠 Home</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Welcome to Our Website</h1>
+      <p>
+        This is a simple and clean home page designed with modern CSS
+        properties. We focus on simplicity and elegant design.
+      </p>
+      <a href="#about" class="btn">Learn More</a>
+    </section>
+
+    <section class="section">
+      <h2>About This Page</h2>
+      <p>
+        This is a simple home page made with CSS properties like gradients,
+        flexbox, hover effects, and responsive design. 
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Simple Home Page - Made with CSS</p>
+    </footer>
+  </body>
+</html>
